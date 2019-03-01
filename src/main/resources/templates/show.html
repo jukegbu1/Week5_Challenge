@@ -1,0 +1,33 @@
+<!-- Message Details-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Message Details</title>
+    <th:block th:insert="base :: header"></th:block>
+
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav th:replace="base :: nav"></nav>
+
+
+<h1>Message Details</h1>
+
+<button href="/" type="button" class="btn btn-info">View All Messages</button>
+
+<section class="container text-left">
+    Title : <span th:text="${message.title}"></span><br>
+    Content : <span th:text="${message.content}"></span><br>
+    Posted Date : <span th:text="${message.postedDate}"></span><br>
+    Posted By: <span th:text="${message.postedBy}"></span><br>
+    <a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>
+</section>
+
+<span th:replace="base :: jslinks"></span>
+
+</body>
+</html>
